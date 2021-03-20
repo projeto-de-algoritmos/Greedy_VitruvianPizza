@@ -1,6 +1,5 @@
 import { DemandType } from "./DemandType";
 
-
 export class GreedPizza {
     private _knapSack(pizza_capacity: number, qtd_pizza: Array<number>, tempo: Array<number>, pedidos: number): number {
         if (pedidos == 0 || pizza_capacity == 0) {
@@ -19,9 +18,9 @@ export class GreedPizza {
         return total_time;
     }
     
-    generate_demand() {
+    generateDemand(qtt_demands: number) {
         let demands: DemandType;
-        const qtt_demands = Math.floor(Math.random() * 100+1);
+        // const qtt_demands = Math.floor(Math.random() * 100+1);
         let pizza_quantity = [];
         let time = [];
         for (let i = 0; i < qtt_demands; i++) {
