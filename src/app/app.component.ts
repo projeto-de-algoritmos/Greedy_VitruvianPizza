@@ -15,7 +15,7 @@ export class AppComponent {
   pizzaControl = new FormControl(10, Validators.required);
   resultForm: FormGroup;
   resultControl = new FormControl(0);
-  title = 'down-fall';
+  title = 'Ajude o Peter Parker';
   orders?: [PizzaOrder];
   alreadyGetOrders = false;
 

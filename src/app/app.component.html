@@ -6,8 +6,8 @@
 
 <mat-grid-list cols="2" rowHeight="2:1">
   <mat-grid-tile>
-    <div class="example-button-row">
-      <form class="example-container" [formGroup]="options">
+    <div class="button-row">
+      <form class="container" [formGroup]="options">
         <mat-form-field appearance="fill" style="width:100%">
           <mat-label>Quantas entregas o Peter Parker vai fazer?</mat-label>
           <input matInput type="number" placeholder="Ex. 12" [formControl]="orderControl" min="5">
@@ -26,8 +26,8 @@
     </div>
   </mat-grid-tile>
   <mat-grid-tile>
-    <div class="example-button-row" *ngIf="alreadyGetOrders">
-      <form class="example-container" [formGroup]="resultForm">
+    <div class="button-row" *ngIf="alreadyGetOrders">
+      <form class="container" [formGroup]="resultForm">
         <mat-form-field appearance="fill" style="width:150%">
           <mat-label>Quantos minutos o Peter Parker vai precisar?</mat-label>
           <input matInput type="number" placeholder="Ex. 12" [formControl]="resultControl" min="5">
@@ -44,23 +44,17 @@
 
 <br />
 
-<!-- <div style="display: flex;"> -->
-  <!-- <div *ngFor="let order of orders" style="display: flex;">
-    <p>Pedido {{ order.id }}</p>
+<mat-card class="inline-block" *ngFor="let order of orders">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Pedido {{ order.id }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
     <p>{{ order.quantity }} Pizzas para ser entregue</p>
     <p>{{ order.time }} Minutos para o pedido total</p>
-  </div> -->
-  
-  <mat-card class="inline-block" *ngFor="let order of orders">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Pedido {{ order.id }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>{{ order.quantity }} Pizzas para ser entregue</p>
-      <p>{{ order.time }} Minutos para o pedido total</p>
-    </mat-card-content>
-  </mat-card>
-<!-- </div> -->
+  </mat-card-content>
+</mat-card>
+
+<br />
 
 <router-outlet></router-outlet>
