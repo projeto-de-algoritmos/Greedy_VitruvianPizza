@@ -1,9 +1,15 @@
-<h1 class="title">Ajude o Peter Parker</h1>
+<div class="bg-fundo"></div>
+<h1 class="title">Peça ajuda ao Peter Parker</h1>
 
 <p class="description">
-O seu tio Osvaldo deixou para você uma grande herança para administrar, a Vitruvian Pizzaria. Em seu primeiro dia tomando conta dos negócios, 
-você fica nervoso e decide pedir ajuda para um de seus funcionários. Por sorte, esse funcionário que você solicita ajuda não é nada mais
-nada menos que o Peter Parker.</p>
+O seu tio Osvaldo é dono da Vitruvian Pizza, uma pizzaria de Nova Iorque, onde você acaba de ser contratado como entregador. Em seu primeiro dia no trampo, 
+você recebe uma série de pedidos e começa a ficar nervoso, sem conseguir lidar com toda demanda você decide pedir ajuda para um de seus colegas de trabalho. 
+Por sorte, esse colega que você solicita ajuda não é nada mais nada menos que o Peter Parker. Como Peter por algum mistério é o entregador mais rápido, você
+decide repassar para ele os pedidos mais demorados.<br/>
+Dê para Peter quantos pedidos de pizza você recebeu e fale para ele quantas pizzas ele deve entregar. Depois disso olhe as comandas e tente estimar, qual é o
+maior tempo que Peter Parker levará para entregar as pizzas solicitadas.<br/>
+Esse problema é inspirado na questão <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1286">1286 do URI</a>.
+</p>
 
 <br />
 
@@ -12,7 +18,7 @@ nada menos que o Peter Parker.</p>
     <div class="button-row" *ngIf="isOn">
       <form class="container" [formGroup]="options">
         <mat-form-field appearance="fill" style="width:100%">
-          <mat-label>Quantas entregas o Peter Parker vai fazer?</mat-label>
+          <mat-label>Quantas entregas você recebeu?</mat-label>
           <input matInput type="number" placeholder="Ex. 12" [formControl]="orderControl" min="5">
           <span matSuffix>entregas</span>
           <mat-error *ngIf="orderControl.invalid">Min size: 5</mat-error>
@@ -45,7 +51,7 @@ nada menos que o Peter Parker.</p>
     <div class="button-row" *ngIf="alreadyGetOrders">
       <form class="container" [formGroup]="resultForm">
         <mat-form-field appearance="fill" style="width:150%">
-          <mat-label>Quantos minutos o Peter Parker vai precisar?</mat-label>
+          <mat-label>Qual é o tempo máximo que você quer que Peter Parker leve?</mat-label>
           <input matInput type="number" placeholder="Ex. 12" [formControl]="resultControl" min="5">
           <span matSuffix>minutos</span>
         </mat-form-field>

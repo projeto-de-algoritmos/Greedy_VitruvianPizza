@@ -63,3 +63,17 @@ p {
 .mat-grid-tile {
     overflow: visible;
 }
+
+.bg-fundo {
+    background-image: url("../assets/images/pizzaria.png");
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -1;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.2;
+}

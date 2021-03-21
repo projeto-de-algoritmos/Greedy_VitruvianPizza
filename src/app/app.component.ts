@@ -39,7 +39,7 @@ export class AppComponent {
   getResponse() {
     var response = this.pizzaOrderService.getKnapSackValue(this.options.value.minPizza);
 
-    if (response != this.resultForm.value.result) {
+    if (response == this.resultForm.value.result) {
       Swal.fire({
         position: 'center',
         imageUrl: '../assets/images/dance.gif',
