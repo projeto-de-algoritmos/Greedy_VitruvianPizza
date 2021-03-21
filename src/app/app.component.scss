@@ -37,11 +37,29 @@ p {
     margin-left: 10px;
 }
 
-card {
+.card {
     max-width: 200px;
 }
 
 .inline-block {
-    display: inline-block;
+    margin: 10px;
+    width: 12vh;
+    height: 15vh;
     max-width: 200px;
+}
+
+.wrap-cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 150px;
+    height: 100%;
+}
+
+.mat-grid_height {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.mat-grid-tile {
+    overflow: visible;
 }

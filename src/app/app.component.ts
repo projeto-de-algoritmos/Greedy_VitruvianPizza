@@ -15,6 +15,7 @@ export class AppComponent {
   pizzaControl = new FormControl(10, Validators.required);
   resultForm: FormGroup;
   resultControl = new FormControl(0);
+  isOn = true;
   title = 'Ajude o Peter Parker';
   orders?: [PizzaOrder];
   alreadyGetOrders = false;
@@ -30,6 +31,7 @@ export class AppComponent {
   }
 
   generateOrders() {
+    this.isOn = false;
     this.orders = this.pizzaOrderService.getOrders(this.options.value.orderValue);
     this.alreadyGetOrders = true;
   }
@@ -37,28 +39,29 @@ export class AppComponent {
   getResponse() {
     var response = this.pizzaOrderService.getKnapSackValue(this.options.value.minPizza);
 
-    if (response == this.resultForm.value.result) {
+    if (response != this.resultForm.value.result) {
       Swal.fire({
         position: 'center',
-        icon: 'success',
+        imageUrl: '../assets/images/dance.gif',
         title: 'Você acertou o tempo que o Peter vai precisar para entregar ' + this.options.value.minPizza + ' pizzas.',
         showConfirmButton: true,
       }).then(() => {
         this.alreadyGetOrders = false;
         this.orders = undefined;
+        this.isOn = true;
       })
     } else {
       Swal.fire({
         position: 'center',
-        icon: 'error',
+        imageUrl: '../assets/images/cry.gif',
         title: 'Você não acertou o tempo necessário que o Peter precisa para entregar. A resposta correta é: ' + response + ' minutos',
         showConfirmButton: true,
       }).then(() => {
         this.alreadyGetOrders = false;
         this.orders = undefined;
+        this.isOn = true;
       })
     }
-
     console.log(response)
   }
 }

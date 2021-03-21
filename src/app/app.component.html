@@ -1,12 +1,15 @@
 <h1 class="title">Ajude o Peter Parker</h1>
 
 <p class="description">
-  Descrição aqui
+O seu tio Osvaldo deixou para você uma grande herança para administrar, a Vitruvian Pizzaria. Em seu primeiro dia tomando conta dos negócios, 
+você fica nervoso e decide pedir ajuda para um de seus funcionários. Por sorte, esse funcionário que você solicita ajuda não é nada mais
+nada menos que o Peter Parker.</p>
+
 <br />
 
-<mat-grid-list cols="2" rowHeight="2:1">
+<mat-grid-list cols="2" rowHeight="2:1" class="mat-grid_height">
   <mat-grid-tile>
-    <div class="button-row">
+    <div class="button-row" *ngIf="isOn">
       <form class="container" [formGroup]="options">
         <mat-form-field appearance="fill" style="width:100%">
           <mat-label>Quantas entregas o Peter Parker vai fazer?</mat-label>
@@ -24,6 +27,19 @@
     
       <button mat-raised-button (click)="generateOrders()">Calcular</button>
     </div>
+
+    <div class="wrap-cards">
+      <mat-card class="inline-block" *ngFor="let order of orders">
+        <mat-card-header>
+          <mat-card-title>Pedido {{ order.id }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ order.quantity }} Pizzas para ser entregue</p>
+          <p>{{ order.time }} Minutos para o pedido total</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
   </mat-grid-tile>
   <mat-grid-tile>
     <div class="button-row" *ngIf="alreadyGetOrders">
@@ -43,17 +59,6 @@
 
 
 <br />
-
-<mat-card class="inline-block" *ngFor="let order of orders">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Pedido {{ order.id }}</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p>{{ order.quantity }} Pizzas para ser entregue</p>
-    <p>{{ order.time }} Minutos para o pedido total</p>
-  </mat-card-content>
-</mat-card>
 
 <br />
 
