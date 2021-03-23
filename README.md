@@ -14,7 +14,9 @@ O seu tio Osvaldo é dono da Vitruvian Pizza, uma pizzaria de Nova Iorque, onde 
 
 Dê para Peter quantos pedidos de pizza você recebeu e fale para ele quantas pizzas ele deve entregar. Depois disso olhe as comandas e tente estimar, qual é o maior tempo que Peter Parker levará para entregar as pizzas solicitadas.
 
-Esse problema é inspirado na questão [1286 do URI](https://www.urionlinejudge.com.br/judge/pt/problems/view/1286). 
+Esse problema é inspirado na questão [1286 do URI](https://www.urionlinejudge.com.br/judge/pt/problems/view/1286).
+
+Você consegue acessar o Vitruviam Pizza através do seguinte link: [https://vitruvian-pizza.netlify.app](https://vitruvian-pizza.netlify.app)
 
 ## Screenshots
 ![Captura de tela de 2021-03-21 18-52-41](https://user-images.githubusercontent.com/35435199/111922199-44815500-8a77-11eb-9cf5-32035e3859f5.png)
